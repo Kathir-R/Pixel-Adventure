@@ -7,6 +7,9 @@ enum PlayerState { idle, running }
 
 class Player extends SpriteAnimationGroupComponent
     with HasGameReference<PixelAdventure> {
+  String character;
+  Player({required this.character});
+
   late final SpriteAnimation idleAnimation;
   late final SpriteAnimation runningAnimation;
   final double stepTime = 0.05;
@@ -18,23 +21,9 @@ class Player extends SpriteAnimationGroupComponent
   }
 
   void _loadAllAnimation() {
-    idleAnimation = SpriteAnimation.fromFrameData(
-      game.images.fromCache('Main Characters/Ninja Frog/Idle (32x32).png'),
-      SpriteAnimationData.sequenced(
-        amount: 11,
-        stepTime: stepTime,
-        textureSize: Vector2.all(32),
-      ),
-    );
+    idleAnimation = _spriteAnimation('Idle', 11);
 
-    runningAnimation = SpriteAnimation.fromFrameData(
-      game.images.fromCache('Main Characters/Ninja Frog/Run (32x32).png'),
-      SpriteAnimationData.sequenced(
-        amount: 12,
-        stepTime: stepTime,
-        textureSize: Vector2.all(32),
-      ),
-    );
+    runningAnimation = _spriteAnimation('Run', 12);
 
     // list of all animation
     animations = {
@@ -44,5 +33,16 @@ class Player extends SpriteAnimationGroupComponent
 
     // Set current animation
     current = PlayerState.running;
+  }
+
+  SpriteAnimation _spriteAnimation(String state, int amount) {
+    return SpriteAnimation.fromFrameData(
+      game.images.fromCache('Main Characters/$character/$state (32x32).png'),
+      SpriteAnimationData.sequenced(
+        amount: amount,
+        stepTime: stepTime,
+        textureSize: Vector2.all(32),
+      ),
+    );
   }
 }
