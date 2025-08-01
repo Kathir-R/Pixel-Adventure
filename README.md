@@ -1,16 +1,27 @@
-# pixel_adventure
+# Pixel Adventure
 
-A new Flutter project.
+Pixel Adventure is a platformer game built with [Flutter](https://flutter.dev/) and [Flame](https://flame-engine.org/). It features tile-based levels, animated characters, and joystick/gamepad support.
+
+## Features
+
+- Multiple playable characters
+- Tile-based level design using Tiled maps
+- Collision detection and physics
+- Joystick and keyboard controls
+- Customizable backgrounds and assets
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+### Prerequisites
 
-A few resources to get you started if this is your first Flutter project:
+- [Flutter SDK](https://docs.flutter.dev/get-started/install)
+- [Dart SDK](https://dart.dev/get-dart)
+- [Tiled Map Editor](https://www.mapeditor.org/) (for editing levels)
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+### Installation
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Clone the repository:
+
+```sh
+git clone https://github.com/yourusername/pixel_adventure.git
+cd pixel_adventure
