@@ -9,13 +9,19 @@ import 'package:pixel_adventure/components/player.dart';
 import 'package:pixel_adventure/components/level.dart';
 
 class PixelAdventure extends FlameGame
-    with HasKeyboardHandlerComponents, DragCallbacks, HasCollisionDetection, TapCallbacks {
+    with
+        HasKeyboardHandlerComponents,
+        DragCallbacks,
+        HasCollisionDetection,
+        TapCallbacks {
   @override
   Color backgroundColor() => const Color(0xFF211F30);
   late CameraComponent cam;
   Player player = Player(character: 'Virtual Guy');
   late JoystickComponent joystick;
   bool showControls = true;
+  bool playSounds = true;
+  double soundVolume = 1.0;
   List<String> levelNames = ['Level-01', 'Level-01'];
   int currentLevelIndex = 0;
 
@@ -82,6 +88,8 @@ class PixelAdventure extends FlameGame
       _loadLevel();
     } else {
       // no more levels
+      currentLevelIndex = 0;
+      _loadLevel();
     }
   }
 
@@ -94,7 +102,7 @@ class PixelAdventure extends FlameGame
 
       cam = CameraComponent.withFixedResolution(
         world: world,
-        width: 640,
+        width: 600,
         height: 360,
       );
       cam.viewfinder.anchor = Anchor.topLeft;
