@@ -25,7 +25,7 @@ enum PlayerState {
 class Player extends SpriteAnimationGroupComponent
     with HasGameReference<PixelAdventure>, KeyboardHandler, CollisionCallbacks {
   String character;
-  Player({position, this.character = 'Ninja Frog'}) : super(position: position);
+  Player({super.position, this.character = 'Ninja Frog'});
 
   final double stepTime = 0.05;
   late final SpriteAnimation idleAnimation;
