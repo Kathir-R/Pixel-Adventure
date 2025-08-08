@@ -1,4 +1,3 @@
-```
 # Pixel Adventure
 
 Pixel Adventure is a 2D platformer built with Flutter and Flame. It features tile-based levels created with Tiled, animated characters, collision detection and physics, and both mobile (joystick + jump button) and desktop (keyboard) controls.
